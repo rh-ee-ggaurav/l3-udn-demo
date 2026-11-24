@@ -1,0 +1,12 @@
+  apiVersion: k8s.ovn.org/v1
+  kind: UserDefinedNetwork
+  metadata:
+    name: my-l3-network
+    namespace: l3-demo
+  spec:
+    topology: Layer3
+    layer3:
+      role: Primary
+      subnets:
+        - cidr: 10.50.0.0/16
+          hostSubnet: 24    # each node gets a /24
